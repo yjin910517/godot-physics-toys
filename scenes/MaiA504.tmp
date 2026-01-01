@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv4qqoik3ktus"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_k3f3p"]
+[ext_resource type="Script" path="res://scripts/block_menu.gd" id="3_vtfml"]
+[ext_resource type="PackedScene" uid="uid://cktiuc1psoiv1" path="res://scenes/BlockButton.tscn" id="3_wlkua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4lxex"]
+size = Vector2(957, 75)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_k3f3p")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(116, 383)
+
+[node name="ColorRect" type="ColorRect" parent="Floor"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = 47.0
+offset_right = 842.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(362.5, 84.5)
+shape = SubResource("RectangleShape2D_4lxex")
+
+[node name="Blocks" type="Node2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="BlockMenu" type="PanelContainer" parent="UI"]
+offset_right = 960.0
+offset_bottom = 65.0
+script = ExtResource("3_vtfml")
+block_button_scene = ExtResource("3_wlkua")
+
+[node name="Buttons" type="HBoxContainer" parent="UI/BlockMenu"]
+layout_mode = 2
