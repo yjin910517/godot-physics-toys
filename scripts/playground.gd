@@ -4,6 +4,7 @@ signal is_in_playground(status: bool)
 signal place_block()
 
 @onready var blocks_container: Node2D = $Blocks
+@onready var bg: ColorRect = $Ground
 @onready var pg_control: Control = $Ground/Control
 
 var current_block_scene: PackedScene
@@ -15,6 +16,8 @@ func _ready() -> void:
 	pg_control.connect("mouse_entered", Callable(self, "_on_mouse_entered"))
 	pg_control.connect("mouse_exited", Callable(self, "_on_mouse_exited"))
 	pg_control.connect("gui_input", Callable(self, "_on_pg_gui_input"))
+	
+	bg.modulate.a = 0.0
 
 
 func _on_mouse_entered():

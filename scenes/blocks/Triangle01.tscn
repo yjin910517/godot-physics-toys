@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bluy0k5rju15s" path="res://arts/triangle 1.png" id="2_3ww75"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_lisc1"]
-points = PackedVector2Array(0, -54, 101, 67, -101, 67)
+points = PackedVector2Array(0, -67, 101, 67, -101, 67)
 
 [node name="Block" type="RigidBody2D"]
 linear_damp = 1.5
