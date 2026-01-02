@@ -2,17 +2,33 @@ extends Node2D
 
 @onready var blocks_container: Node2D = $Blocks
 @onready var block_menu: ToyBox = $Menu
+@onready var ghost: Ghost = $Ghost
 
 var current_block_scene: PackedScene
+var selected_block_id: String = ""
 
 
 func _ready():
 	block_menu.connect("block_selected", Callable(self, "_on_block_selected"))
+	
+	ghost.visible = false
 
 
-func _on_block_selected(scene: PackedScene):
-	current_block_scene = scene
-	print("Selected block:", scene.resource_path)
+func _process(delta):
+	if not ghost.visible:
+		return
+
+	ghost.global_position = get_global_mouse_position()
+	
+
+func _on_block_selected(block_id: String):
+	selected_block_id = block_id
+	var data: Dictionary = BlockDatabase.blocks[selected_block_id]
+	current_block_scene = data["scene"]
+	
+	# update ghost
+	ghost.set_texture(data["icon"])
+	ghost.visible = true
 	
 	
 func _unhandled_input(event):

@@ -1,7 +1,7 @@
 extends Node2D
 class_name ToyBox
 
-signal block_selected(scene: PackedScene)
+signal block_selected(block_id: String)
 
 @onready var block_item_scene: PackedScene = preload("res://scenes/BlockItem.tscn")
 
@@ -48,5 +48,4 @@ func _on_select_block(block_id: String):
 	for btn in _buttons:
 		btn.set_selected(btn.block_id == block_id)
 
-	var scene: PackedScene = BlockDatabase.blocks[block_id]["scene"]
-	emit_signal("block_selected", scene)
+	emit_signal("block_selected", block_id)

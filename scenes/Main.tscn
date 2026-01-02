@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dv4qqoik3ktus"]
+[gd_scene load_steps=5 format=3 uid="uid://dv4qqoik3ktus"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_k3f3p"]
 [ext_resource type="PackedScene" uid="uid://bk7cqf1ypt21e" path="res://scenes/ToyBoxMenu.tscn" id="2_m1mll"]
+[ext_resource type="PackedScene" uid="uid://dsbngp2q5qcl3" path="res://scenes/Ghost.tscn" id="3_udox3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4lxex"]
-size = Vector2(957, 75)
+size = Vector2(1598, 75)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_k3f3p")
@@ -12,7 +13,8 @@ script = ExtResource("1_k3f3p")
 [node name="Blocks" type="Node2D" parent="."]
 
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(116, 383)
+position = Vector2(118, 735)
+metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="Floor"]
 anchors_preset = 8
@@ -22,14 +24,15 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -115.0
 offset_top = 47.0
-offset_right = 842.0
+offset_right = 1480.0
 offset_bottom = 122.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2(362.5, 84.5)
+position = Vector2(683, 84.5)
 shape = SubResource("RectangleShape2D_4lxex")
 
 [node name="Menu" parent="." instance=ExtResource("2_m1mll")]
+
+[node name="Ghost" parent="." instance=ExtResource("3_udox3")]
