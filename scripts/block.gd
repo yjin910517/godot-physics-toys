@@ -5,8 +5,15 @@ class_name Block
 @export var settle_angular_threshold := 0.2
 @export var settle_time := 0.25  # how long it must be stable before freezing
 
+@onready var click_shield = $Sprite2D/ClickShield
+
 var _stable_timer := 0.0
 var _has_settled := false
+
+
+func _ready() -> void:
+	click_shield.modulate.a = 0.0
+
 
 func _physics_process(delta):
 	if _has_settled:

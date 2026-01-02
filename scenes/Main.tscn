@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dv4qqoik3ktus"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_k3f3p"]
-[ext_resource type="Script" path="res://scripts/playground.gd" id="2_6v2wy"]
 [ext_resource type="PackedScene" uid="uid://bk7cqf1ypt21e" path="res://scenes/ToyBoxMenu.tscn" id="2_m1mll"]
+[ext_resource type="PackedScene" uid="uid://8vv6l3k8u61q" path="res://scenes/Playground.tscn" id="2_yg0cw"]
 [ext_resource type="PackedScene" uid="uid://dsbngp2q5qcl3" path="res://scenes/Ghost.tscn" id="3_udox3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4lxex"]
@@ -10,27 +10,6 @@ size = Vector2(1598, 75)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_k3f3p")
-
-[node name="Blocks" type="Node2D" parent="."]
-position = Vector2(699, 0)
-
-[node name="Playground" type="Node2D" parent="."]
-position = Vector2(699, 0)
-script = ExtResource("2_6v2wy")
-metadata/_edit_group_ = true
-
-[node name="BG" type="ColorRect" parent="Playground"]
-offset_right = 894.0
-offset_bottom = 778.0
-color = Color(0.522069, 0.833581, 0.545033, 1)
-
-[node name="Control" type="Control" parent="Playground/BG"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(118, 735)
@@ -52,6 +31,8 @@ grow_vertical = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(683, 84.5)
 shape = SubResource("RectangleShape2D_4lxex")
+
+[node name="Playground" parent="." instance=ExtResource("2_yg0cw")]
 
 [node name="Menu" parent="." instance=ExtResource("2_m1mll")]
 

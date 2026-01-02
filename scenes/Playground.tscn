@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://8vv6l3k8u61q"]
+
+[ext_resource type="Script" path="res://scripts/playground.gd" id="1_3dxrk"]
+
+[node name="Playground" type="Node2D"]
+position = Vector2(699, 0)
+script = ExtResource("1_3dxrk")
+metadata/_edit_group_ = true
+
+[node name="Ground" type="ColorRect" parent="."]
+offset_right = 894.0
+offset_bottom = 778.0
+color = Color(0.522069, 0.833581, 0.545033, 1)
+
+[node name="Control" type="Control" parent="Ground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Blocks" type="Node2D" parent="."]
