@@ -1,12 +1,13 @@
 extends Node2D
 
 @onready var blocks_container: Node2D = $Blocks
-@onready var block_menu: BlockMenu = $UI/BlockMenu
+@onready var block_menu: ToyBox = $Menu
 
 var current_block_scene: PackedScene
 
+
 func _ready():
-	block_menu.block_selected.connect(Callable(self, "_on_block_selected"))
+	block_menu.connect("block_selected", Callable(self, "_on_block_selected"))
 
 
 func _on_block_selected(scene: PackedScene):
@@ -19,7 +20,7 @@ func _unhandled_input(event):
 	and event.button_index == MOUSE_BUTTON_LEFT \
 	and event.pressed:
 
-		# Optional: Ignore clicks that happen over UI
+		# WIP: Ignore clicks that happen over UI
 		if get_viewport().gui_get_hovered_control() != null:
 			return
 

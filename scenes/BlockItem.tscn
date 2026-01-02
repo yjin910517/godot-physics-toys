@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3by430vpooqa"]
+
+[ext_resource type="Texture2D" uid="uid://d1l0nvnvgy17d" path="res://arts/round 1-1.png" id="1_uoj5y"]
+[ext_resource type="Script" path="res://scripts/block_item.gd" id="2_dbe31"]
+
+[node name="BlockItem" type="TextureRect"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_uoj5y")
+stretch_mode = 5
+script = ExtResource("2_dbe31")
+
+[node name="ClickControl" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+
+[node name="Highlight" type="ColorRect" parent="."]
+layout_mode = 0
+mouse_filter = 2
+color = Color(1, 1, 0.823529, 0.501961)
