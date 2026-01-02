@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7th2sw2k4uac"
-path="res://.godot/imported/square 2_icon.png-895f6e0befd2a6e790a39a9d8409bb1b.ctex"
+uid="uid://dp4od14yakyim"
+path="res://.godot/imported/pillar 2.png-080633da0efd29850255b4b2dccdefe9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/square 2_icon.png"
-dest_files=["res://.godot/imported/square 2_icon.png-895f6e0befd2a6e790a39a9d8409bb1b.ctex"]
+source_file="res://arts/pillar 2.png"
+dest_files=["res://.godot/imported/pillar 2.png-080633da0efd29850255b4b2dccdefe9.ctex"]
 
 [params]
 

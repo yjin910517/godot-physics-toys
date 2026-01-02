@@ -1,33 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6vhoryi3x2ik"]
+[gd_scene load_steps=4 format=3 uid="uid://cr0dgqtymiuim"]
 
-[ext_resource type="Script" path="res://scripts/block.gd" id="1_qy8i6"]
-[ext_resource type="Texture2D" uid="uid://b5m5mmwihsgiy" path="res://arts/square 2.png" id="2_x51gq"]
+[ext_resource type="Script" path="res://scripts/block.gd" id="1_3615q"]
+[ext_resource type="Texture2D" uid="uid://ddla1fk06ml7r" path="res://arts/pillar 1.png" id="2_s8s0d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2dwl"]
-size = Vector2(141, 153)
+size = Vector2(66, 138)
 
 [node name="Block" type="RigidBody2D"]
 linear_damp = 1.5
 angular_damp = 2.0
-script = ExtResource("1_qy8i6")
+script = ExtResource("1_3615q")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, -0.5)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_b2dwl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_x51gq")
+texture = ExtResource("2_s8s0d")
 
 [node name="ClickShield" type="ColorRect" parent="Sprite2D"]
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -143.0
-offset_top = -154.5
-offset_right = -143.0
-offset_bottom = -154.5
+offset_left = -67.5
+offset_top = -140.5
+offset_right = -67.5
+offset_bottom = -140.5
 grow_horizontal = 2
 grow_vertical = 2

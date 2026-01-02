@@ -14,11 +14,6 @@ func _ready():
 
 
 func build_menu():
-	
-	for child in get_children():
-		child.queue_free()
-
-	_buttons.clear()
 
 	var keys: Array = BlockDatabase.blocks.keys()
 	keys.sort()

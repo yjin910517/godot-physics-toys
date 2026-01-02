@@ -13,6 +13,7 @@ var _has_settled := false
 
 func _ready() -> void:
 	click_shield.modulate.a = 0.0
+	click_shield.connect("gui_input", Callable(self, "_on_block_gui_input"))
 
 
 func _physics_process(delta):
@@ -29,3 +30,9 @@ func _physics_process(delta):
 		freeze = true
 		sleeping = true
 		_has_settled = true
+
+
+func _on_block_gui_input(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		# TBD: for block deletion mode
+		print("block clicked")

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/block.gd" id="1_qy8i6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2dwl"]
-size = Vector2(120, 120)
+size = Vector2(140, 149.5)
 
 [node name="Block" type="RigidBody2D"]
 linear_damp = 1.5
@@ -13,6 +13,7 @@ script = ExtResource("1_qy8i6")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.25)
 shape = SubResource("RectangleShape2D_b2dwl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -24,9 +25,9 @@ modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -120.5
-offset_top = -121.5
-offset_right = -120.5
-offset_bottom = -121.5
+offset_left = -143.0
+offset_top = -154.5
+offset_right = -143.0
+offset_bottom = -154.5
 grow_horizontal = 2
 grow_vertical = 2
