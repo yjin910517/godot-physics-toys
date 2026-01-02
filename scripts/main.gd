@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var playground: Node2D = $Playground
 @onready var blocks_container: Node2D = $Blocks
 @onready var block_menu: ToyBox = $Menu
 @onready var ghost: Ghost = $Ghost
@@ -10,6 +11,8 @@ var selected_block_id: String = ""
 
 func _ready():
 	block_menu.connect("block_selected", Callable(self, "_on_block_selected"))
+	playground.connect("is_in_playground", Callable(self, "_on_playground"))
+
 	
 	ghost.visible = false
 
@@ -28,7 +31,13 @@ func _on_block_selected(block_id: String):
 	
 	# update ghost
 	ghost.set_texture(data["icon"])
-	ghost.visible = true
+
+
+func _on_playground(status):
+	if selected_block_id == "":
+		return
+	
+	ghost.visible = status
 	
 	
 func _unhandled_input(event):
