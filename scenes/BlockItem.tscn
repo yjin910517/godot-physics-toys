@@ -12,8 +12,3 @@ script = ExtResource("2_dbe31")
 [node name="ClickControl" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 0
-
-[node name="Highlight" type="ColorRect" parent="."]
-layout_mode = 0
-mouse_filter = 2
-color = Color(1, 1, 0.823529, 0.501961)

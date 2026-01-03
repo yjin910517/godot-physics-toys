@@ -10,6 +10,8 @@ signal place_block()
 var current_block_scene: PackedScene
 var selected_block_id: String = ""
 
+var delete_mode: bool = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,5 +35,22 @@ func _on_pg_gui_input(event):
 		emit_signal("place_block")
 
 
+func _wakeup_blocks():
+	for child in blocks_container.get_children():
+		child.sleeping = false
+
+
 func add_block_to_pg(block_instance):
+	_wakeup_blocks()
 	blocks_container.add_child(block_instance)
+	block_instance.connect("block_clicked", Callable(self, "_on_block_click"))
+
+
+func set_delete_mode(status):
+	delete_mode = status
+	
+
+func _on_block_click(block_instance):
+	if delete_mode:
+		block_instance.queue_free()
+		_wakeup_blocks()

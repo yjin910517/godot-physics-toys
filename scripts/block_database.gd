@@ -17,6 +17,11 @@ var blocks := {
 		"icon": preload("res://arts/square 3.png"),
 		"pos": Vector2(300,100)
 	},
+	"rect_4": {
+		"scene": preload("res://scenes/blocks/Rect04.tscn"),
+		"icon": preload("res://arts/square 4.png"),
+		"pos": Vector2(420,100)
+	},
 	"pillar_1": {
 		"scene": preload("res://scenes/blocks/Pillar01.tscn"),
 		"icon": preload("res://arts/pillar 1.png"),
@@ -26,6 +31,16 @@ var blocks := {
 		"scene": preload("res://scenes/blocks/Pillar02.tscn"),
 		"icon": preload("res://arts/pillar 2.png"),
 		"pos": Vector2(180,220)
+	},
+	"pillar_3": {
+		"scene": preload("res://scenes/blocks/Pillar03.tscn"),
+		"icon": preload("res://arts/pillar 3.png"),
+		"pos": Vector2(260,220)
+	},
+	"pillar_4": {
+		"scene": preload("res://scenes/blocks/Pillar04.tscn"),
+		"icon": preload("res://arts/pillar 4.png"),
+		"pos": Vector2(340,220)
 	},
 	"triangle_1": {
 		"scene": preload("res://scenes/blocks/Triangle01.tscn"),
@@ -60,11 +75,17 @@ var blocks := {
 	"dome_1": {
 		"scene": preload("res://scenes/blocks/Dome01.tscn"),
 		"icon": preload("res://arts/dome 1.png"),
-		"pos": Vector2(100,640)
+		"pos": Vector2(280,540)
 	},
 	"dome_2": {
 		"scene": preload("res://scenes/blocks/Dome02.tscn"),
 		"icon": preload("res://arts/dome 2.png"),
-		"pos": Vector2(260,640)
+		"pos": Vector2(420,540)
+	},
+	
+	# special buttons
+	"delete": {
+		"icon": preload("res://arts/delete.png"),
+		"pos": Vector2(200,680)
 	},
 }

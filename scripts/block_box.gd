@@ -26,8 +26,6 @@ func build_menu():
 		add_child(menu_item)
 		
 		menu_item.block_id = block_id
-		menu_item.block_scene = data["scene"]
-		
 		menu_item.texture = data["icon"]
 		menu_item.position = data["pos"]
 		menu_item.set_full_rect()
@@ -39,8 +37,8 @@ func build_menu():
 
 func _on_select_block(block_id: String):
 	_selected_id = block_id
-
+	
 	for btn in _buttons:
 		btn.set_selected(btn.block_id == block_id)
-
+	
 	emit_signal("block_selected", block_id)

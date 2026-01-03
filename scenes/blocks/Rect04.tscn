@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://twts7f4kjjso"]
+
+[ext_resource type="Script" path="res://scripts/block.gd" id="1_jok7c"]
+[ext_resource type="Texture2D" uid="uid://bo1h7jp5d6afr" path="res://arts/square 4.png" id="2_t3xh8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2dwl"]
+size = Vector2(200, 138)
+
+[node name="Block" type="RigidBody2D"]
+linear_damp = 1.5
+angular_damp = 2.0
+script = ExtResource("1_jok7c")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_b2dwl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_t3xh8")
+
+[node name="ClickShield" type="ColorRect" parent="Sprite2D"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -202.5
+offset_top = -138.5
+offset_right = -202.5
+offset_bottom = -138.5
+grow_horizontal = 2
+grow_vertical = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dv4qqoik3ktus"]
+[gd_scene load_steps=9 format=3 uid="uid://dv4qqoik3ktus"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_k3f3p"]
 [ext_resource type="Texture2D" uid="uid://b51jcsgba3r6q" path="res://arts/background.png" id="2_dyfbq"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://8vv6l3k8u61q" path="res://scenes/Playground.tscn" id="2_yg0cw"]
 [ext_resource type="Texture2D" uid="uid://ci8p18emc0a4o" path="res://arts/table.png" id="3_pl66j"]
 [ext_resource type="PackedScene" uid="uid://dsbngp2q5qcl3" path="res://scenes/Ghost.tscn" id="3_udox3"]
+[ext_resource type="Texture2D" uid="uid://dnrgasjeux40p" path="res://arts/delete.png" id="7_u68f7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4lxex"]
 size = Vector2(880, 73)
@@ -38,8 +39,16 @@ texture = ExtResource("3_pl66j")
 position = Vector2(439, 38.5)
 shape = SubResource("RectangleShape2D_4lxex")
 
-[node name="Playground" parent="." instance=ExtResource("2_yg0cw")]
-
 [node name="Menu" parent="." instance=ExtResource("2_m1mll")]
 
+[node name="Playground" parent="." instance=ExtResource("2_yg0cw")]
+
 [node name="Ghost" parent="." instance=ExtResource("3_udox3")]
+
+[node name="DeleteGhost" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="DeleteGhost"]
+modulate = Color(1, 1, 1, 0.454902)
+z_index = 100
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_u68f7")
