@@ -2,6 +2,7 @@ extends Node2D
 class_name ToyBox
 
 signal block_selected(block_id: String)
+signal reset_playground()
 
 @onready var block_item_scene: PackedScene = preload("res://scenes/BlockItem.tscn")
 
@@ -36,9 +37,13 @@ func build_menu():
 
 
 func _on_select_block(block_id: String):
-	_selected_id = block_id
-	
-	for btn in _buttons:
-		btn.set_selected(btn.block_id == block_id)
-	
-	emit_signal("block_selected", block_id)
+	if block_id == "reset":
+		emit_signal("reset_playground")
+		
+	else:
+		_selected_id = block_id
+		
+		for btn in _buttons:
+			btn.set_selected(btn.block_id == block_id)
+		
+		emit_signal("block_selected", block_id)

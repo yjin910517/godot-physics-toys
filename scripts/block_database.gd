@@ -82,10 +82,24 @@ var blocks := {
 		"icon": preload("res://arts/dome 2.png"),
 		"pos": Vector2(420,540)
 	},
+	"flat_1": {
+		"scene": preload("res://scenes/blocks/Flat01.tscn"),
+		"icon": preload("res://arts/flat 1.png"),
+		"pos": Vector2(100,620)
+	},
+	"flat_2": {
+		"scene": preload("res://scenes/blocks/Flat02.tscn"),
+		"icon": preload("res://arts/flat 2.png"),
+		"pos": Vector2(260,620)
+	},
 	
 	# special buttons
 	"delete": {
 		"icon": preload("res://arts/delete.png"),
-		"pos": Vector2(200,680)
+		"pos": Vector2(200,720)
+	},
+	"reset": {
+		"icon": preload("res://arts/reset.png"),
+		"pos": Vector2(320,720)
 	},
 }

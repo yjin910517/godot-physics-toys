@@ -54,3 +54,8 @@ func _on_block_click(block_instance):
 	if delete_mode:
 		block_instance.queue_free()
 		_wakeup_blocks()
+
+
+func reset_pg():
+	for child in blocks_container.get_children():
+		child.queue_free()

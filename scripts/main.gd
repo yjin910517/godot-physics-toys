@@ -12,6 +12,7 @@ var selected_block_id: String = ""
 
 func _ready():
 	block_menu.connect("block_selected", Callable(self, "_on_block_selected"))
+	block_menu.connect("reset_playground", Callable(self, "_on_reset_playground"))
 	playground.connect("is_in_playground", Callable(self, "_on_playground"))
 	playground.connect("place_block", Callable(self, "spawn_block"))
 	
@@ -62,3 +63,7 @@ func spawn_block():
 	
 	playground.add_block_to_pg(block_instance)
 	block_instance.global_position = spawn_pos
+
+
+func _on_reset_playground():
+	playground.reset_pg()
